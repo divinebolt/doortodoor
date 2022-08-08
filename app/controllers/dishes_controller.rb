@@ -3,6 +3,7 @@ class DishesController < ApplicationController
 
   def index
     # starting search
+
     if params[:query].present?
       @dishes = Dish.search(params[:query])
     else
@@ -28,12 +29,15 @@ class DishesController < ApplicationController
       render :new
     end
   end
+
   def edit
   end
+
   def update
     @dish = Dish.update(dish_params)
     redirect_to dishes_path
   end
+
   def destroy
     @dish.destroy
     redirect_to dishes_path
@@ -54,8 +58,8 @@ class DishesController < ApplicationController
       {
         lat: dish.latitude,
         lng: dish.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { excursion: dish }),
-        image_url: helpers.asset_url("green_marker3.png")
+        info_window: render_to_string(partial: 'info_window', locals: { excursion: dish }),
+        image_url: helpers.asset_url('green_marker3.png')
       }
     end
   end
