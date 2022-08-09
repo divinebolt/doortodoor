@@ -58,7 +58,7 @@ class DishesController < ApplicationController
       {
         lat: dish.latitude,
         lng: dish.longitude,
-        info_window: render_to_string(partial: 'info_window', locals: { excursion: dish }),
+        info_window: render_to_string(partial: 'info_window', locals: { dish: dish }),
         image_url: helpers.asset_url('green_marker3.png')
       }
     end

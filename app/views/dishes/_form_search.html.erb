@@ -1,0 +1,15 @@
+<div class="form-search">
+  <%= form_tag dishes_path, method: :get do %>
+    <div class="row mt-4">
+      <div class="col-11">
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a Dish" %>
+      </div>
+      <div class="col-1">
+        <%= submit_tag "Search", class: "btn btn-search" %>
+      </div>
+    </div>
+  <% end %>
+</div>
