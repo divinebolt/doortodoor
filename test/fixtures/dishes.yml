@@ -3,17 +3,17 @@
 one:
   name: MyString
   price: 1.5
-  descrition: MyText
+  description: MyText
   quantity: 1.5
   address: MyString
-  type: 
+  type:
   rating: 1
 
 two:
   name: MyString
   price: 1.5
-  descrition: MyText
+  description: MyText
   quantity: 1.5
   address: MyString
-  type: 
+  type:
   rating: 1
