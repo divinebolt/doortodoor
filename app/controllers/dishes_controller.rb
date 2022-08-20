@@ -10,7 +10,15 @@ class DishesController < ApplicationController
       @dishes = Dish.all
     end
     # Search ended
-    geo_location  # --> geo location of the dish on the map (private)
+    #geo_location  # --> geo location of the dish on the map (private)
+    @markers = @dishes.geocoded.map do |dish|
+      {
+        lat: dish.latitude,
+        lng: dish.longitude,
+        info_window: render_to_string(partial: 'info_window', locals: { dish: dish }),
+        image_url: helpers.asset_url('green_marker3.png')
+      }
+    end
   end
 
   def show
@@ -53,14 +61,14 @@ class DishesController < ApplicationController
     @dish = Dish.find(params[:id])
   end
 
-  def geo_location
-    @markers = @dishes.geocoded.map do |dish|
-      {
-        lat: dish.latitude,
-        lng: dish.longitude,
-        info_window: render_to_string(partial: 'info_window', locals: { dish: dish }),
-        image_url: helpers.asset_url('green_marker3.png')
-      }
-    end
-  end
+  # def geo_location
+  #   @markers = @dishes.geocoded.map do |dish|
+  #     {
+  #       lat: dish.latitude,
+  #       lng: dish.longitude,
+  #       info_window: render_to_string(partial: 'info_window', locals: { dish: dish }),
+  #       image_url: helpers.asset_url('green_marker3.png')
+  #     }
+  #   end
+  # end
 end
