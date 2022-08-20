@@ -1,0 +1,31 @@
+
+.swiper-slide {
+  height: 600px;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+}
+
+.slide1 {
+  background-image: url('homepage1.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.slide2 {
+  background-image: url('homepage2.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.slide3 {
+  background-image: url('homepage3.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.slide4 {
+  background-image: url('homepage4.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+}

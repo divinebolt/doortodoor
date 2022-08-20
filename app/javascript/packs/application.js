@@ -8,9 +8,14 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "bootstrap"
+import 'swiper/css/bundle'
+// In your application.js (for example)
+import 'swiper/swiper-bundle.min.css'
+require("custom/custom.js")
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
 
 import "controllers"
