@@ -6,7 +6,7 @@ class Dish < ApplicationRecord
   # Search
   include PgSearch::Model
   pg_search_scope :search,
-    against: [ :name, :price, :description, :quantity, :type, :rating ],
+    against: [ :name, :price, :description, :quantity, :type, :rating, :address ],
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }

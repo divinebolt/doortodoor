@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+require 'open-uri'
+
+# 15 dishes
+
+puts 'Cleaning database...'
+Dishe.destroy_all
+puts 'Database cleaned'
+
+15.times do
+
+end
