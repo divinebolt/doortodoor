@@ -1,16 +1,37 @@
 <div class="container">
-  <div>
-  <%= simple_form_for(@dish) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :price %>
-    <%= f.input :description %>
-    <%= f.input :quantity %>
-    <%= f.input :type %>
-    <%= f.input :image %>
-    <%= f.input :address,
-      input_html: { data: { geocoder_target: "address" } },
-      wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
-    <%= f.button :submit, class: "btn btn-primary" %>
-  <% end %>
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow new-form">
+        <%= simple_form_for(@dish) do |f| %>
+          <div class="mb-3">
+            <%= f.label :name %>
+            <%= f.text_field :name, placeholder: 'Name of the Dish' %>
+          </div>
+          <div class="mb-3">
+            <%= f.label :description %>
+            <%= f.text_area :description, placeholder: 'Describe your dish...' %>
+          </div>
+          <div class="mb-3">
+            <%= f.label :quantity %>
+            <%= f.number_field :quantity, in: 1.0..10.0, step: 0.2, placeholder: '0.00' %>
+          </div>
+          <div class="mb-3">
+            <%= f.label :price %>
+            <%= f.number_field :price, in: 1.0..50.0, step: 0.5, placeholder: '0.00' %>
+          </div>
+          <div class="mb-3">
+            <%= f.input :image, as: :file, required: :false %>
+          </div>
+          <div class="mb-3">
+          <%= f.input :address,
+            input_html: { data: { geocoder_target: "address" } },
+            wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
+          </div>
+          <div class="mb-3">
+            <%= f.submit class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

@@ -1,16 +1,18 @@
 <div>
   <div>
-    <%= render 'form_search' %>
+    <%= render 'shared/form_search' %>
+    <%= link_to "Create a Dish", new_dish_path %>
   </div>
   <div class="cards">
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-      Breakfast
+      Promotions!!!!
     </div>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-      Lunch
+      Get 5 PAY 1
     </div>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-      Dinner
+      Get 1 PAY 10... <br>
+      but you may get a car
     </div>
   </div>
 </div>
@@ -94,25 +96,27 @@
 <div class="container">
   <div class="row">
     <%# i want the space that will be with 2/3 to cards and 1/3 to the map %>
-    <div class="col-9"> <%# grid of cards %>
+    <div class="col-8"> <%# grid of cards %>
       <div class="container d-flex align-items-center justify-content-center">
-        <% @dishes.each do |dish|%>
-        <%#= render 'card_dish', banana: dish %>
-          <div class="card-dish">
-          <img src="card2.jpg" />
-          <div class="card-dish-infos">
-            <div>
-              <h2><%= dish.name %></h2>
-              <p><%= dish.description %></p>
+
+          <% @dishes.each do |dish|%>
+          <%#= render 'card_dish', banana: dish %>
+            <div class="card-dish">
+            <img src="card2.jpg" />
+            <div class="card-dish-infos">
+              <div>
+                <h2><%= dish.name %></h2>
+                <p><%= dish.description %></p>
+              </div>
+              <h2 class="card-dish-pricing"> <%= dish.price %> </h2>
+              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-dish-user avatar-bordered" />
             </div>
-            <h2 class="card-dish-pricing"> <%= dish.price %> </h2>
-            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-dish-user avatar-bordered" />
           </div>
-        </div>
-        <% end %>
+          <% end %>
+
       </div>
     </div>
-    <div class="col-3"> <%# map %>
+    <div class="col-4"> <%# map %>
       <%= render 'map'%>
     </div>
   </div>
