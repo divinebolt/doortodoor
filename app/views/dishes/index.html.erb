@@ -99,10 +99,10 @@
     <div class="col-8"> <%# grid of cards %>
       <div class="container d-flex align-items-center justify-content-center">
 
-          <% @dishes.each do |dish|%>
-          <%#= render 'card_dish', banana: dish %>
-            <div class="card-dish">
-            <img src="card2.jpg" />
+        <% @dishes.each do |dish|%>
+        <%#= render 'card_dish', banana: dish %>
+          <div class="card-dish">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
             <div class="card-dish-infos">
               <div>
                 <h2><%= dish.name %></h2>
@@ -112,9 +112,9 @@
               <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-dish-user avatar-bordered" />
             </div>
           </div>
-          <% end %>
-
+        <% end %>
       </div>
+
     </div>
     <div class="col-4"> <%# map %>
       <%= render 'map'%>
