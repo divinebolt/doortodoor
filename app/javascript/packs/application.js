@@ -11,7 +11,7 @@ import "bootstrap"
 import 'swiper/css/bundle'
 // In your application.js (for example)
 import 'swiper/swiper-bundle.min.css'
-require("custom/custom.js")
+require("../custom/custom");
 
 Rails.start()
 Turbolinks.start()
