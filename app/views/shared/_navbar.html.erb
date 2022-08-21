@@ -1,10 +1,12 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "doortodoor.jpg" %>
     <% end %>
     <div class="title">
-      <h1><strong>DOOR 2 DOOR</strong></h1>
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <h1><strong>DOOR 2 DOOR</strong></h1>
+      <% end %>
     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -15,11 +17,10 @@
         <% if user_signed_in? %>
           <li class="nav-item form-check form-switch">
             <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-            <label class="form-check-label" for="flexSwitchCheckDefault">Become a Host</label>
-
+            <label class="form-check-label" for="flexSwitchCheckDefault"><strong>Become a Host</strong></label>
           </li>
           <li class="nav-item">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "A world of Dishes", dishes_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

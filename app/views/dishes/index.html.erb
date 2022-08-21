@@ -6,20 +6,114 @@
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
       Breakfast
     </div>
-
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
       Lunch
     </div>
-
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
       Dinner
     </div>
   </div>
+</div>
 
-  <div>
-    <%= render 'info_window'%>
+<%# walkabout %>
+  <%# <div class="container">
+    <div class="row pt-2">
+      <div class="col">
+        <div>
+          <%= render 'form_search' %>
+        <%# </div> %>
+        <%# <% if current_user.role == 'Host'%>
+          <%# <%= link_to "+ Excursion", new_excursion_path, class: "btn btn-login" %>
+        <%# <% end %>
+      <%# </div>
+    </div>
   </div>
-  <div>
-    <%= render 'map'%>
+
+  <div class="container">
+    <div class="row">
+      <div class="cards col-6 pl-0" style="padding-bottom: 3vh">
+        <% @dishes.each do |dish| %>
+          <%# <div class="card-dish">
+            <% if dish.photo.attached? %>
+              <%# <%= cl_image_tag dish.photo.key, crop: :scale , q_auto: :good  %>
+            <%# <% else %>
+              <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+            <% end  %>
+            <%# <div class="card-dish-infos">
+              <div>
+                <h2><%= link_to excursion.name, excursion_path(excursion.id) %>
+                <%# <p><%= excursion.description %>
+              <%# </div>
+              <h2 class="card-dish-pricing">€<%= excursion.price %>
+              <%# <% if excursion.user.photo.attached? %>
+                <%# <div class="card-dish-user avatar-bordered">
+                  <%= cl_image_tag excursion.user.photo.key, height: 40, width: 40, radius: "max",  crop: :thumb, fetch_format: :png %>
+                <%# </div>
+              <% else %>
+                <%# <%= image_tag("user_avatar.png", class: "avatar")  %>
+              <%# <% end %>
+            <%# </div>
+          </div>
+        <% end %>
+      <%# </div>
+
+      <div class="col-6">
+        <%= render 'map' %>
+      <%# </div>
+    </div>
+  </div> %>
+
+
+<%# watchlist %>
+
+<%# <div class="cover mb-4 d-flex align-items-center justify-content-center">
+  <div class="text-center text-white">
+    <h1>Save any kind of movies</h1>
+  </div>
+</div>
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h3 class="mb-0">My Lists</h3>
+    <%= link_to "Create a movie list", new_list_path, class: "btn btn-flat" %>
+  <%# </div>
+  <div class="row">
+    <% @lists.each do |list| %>
+      <%# <div class="co-12 col-sm-6 col-md-4">
+        <%= link_to list_path(list), class: "text-decoration-none" do %>
+          <%# <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('list_background.jpg') %>)">
+            <%# <%= list.name %>
+          <%# </div>
+        <% end %>
+      <%# </div>
+    <% end %>
+  <%# </div>
+</div> %>
+
+<%# My try %>
+
+<div class="container">
+  <div class="row">
+    <%# i want the space that will be with 2/3 to cards and 1/3 to the map %>
+    <div class="col-9"> <%# grid of cards %>
+      <div class="container d-flex align-items-center justify-content-center">
+        <% @dishes.each do |dish|%>
+        <%#= render 'card_dish', banana: dish %>
+          <div class="card-dish">
+          <img src="card2.jpg" />
+          <div class="card-dish-infos">
+            <div>
+              <h2><%= dish.name %></h2>
+              <p><%= dish.description %></p>
+            </div>
+            <h2 class="card-dish-pricing"> <%= dish.price %> </h2>
+            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-dish-user avatar-bordered" />
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-3"> <%# map %>
+      <%= render 'map'%>
+    </div>
   </div>
 </div>
