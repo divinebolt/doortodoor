@@ -4,7 +4,7 @@
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
             <div class="card-dish-infos">
               <div>
-                <h2><%= banana.name %></h2>
+                <h2><%= link_to banana.name, dish_path(banana.id) %></h2>
                 <p><%= banana.description %></p>
               </div>
               <h2 class="card-dish-pricing"> <%= banana.price %> </h2>

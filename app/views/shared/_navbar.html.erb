@@ -11,10 +11,9 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
+
           <li class="nav-item form-check form-switch">
             <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
             <label class="form-check-label" for="flexSwitchCheckDefault"><strong>Become a Host</strong></label>
@@ -22,19 +21,22 @@
           <li class="nav-item">
             <%= link_to "A world of Dishes", dishes_path, class: "nav-link" %>
           </li>
+          <% if user_signed_in? %>
           <li class="nav-item dropdown">
+            <div class="dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            </div>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
               <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>
-        <% else %>
+          <% else %>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
-        <% end %>
+          <% end %>
       </ul>
     </div>
   </div>

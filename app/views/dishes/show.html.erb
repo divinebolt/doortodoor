@@ -1,0 +1,17 @@
+<div class="card-product-user">
+    <div class ="card-dish">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg"/>
+    </div>
+  <div class="card-product-infos">
+    <h1> <%= @dish.name %> </h1>
+    <h3> Address : <%= @dish.address %> | €<%= @dish.price %> </h3>
+    <p> <%= @dish.description %> </p>
+    <hr>
+    <%# tem que ir para a pagina do checkout com o index %>
+    <%= link_to "Add this Dish", dishes_path(@dish), class: "btn btn-primary" %>
+    <%= link_to "Back", dishes_path, class: "btn btn-secondary"%>
+  </div>
+</div>
+
+
+<%# falta um butão para adicionar a quantidade %>
