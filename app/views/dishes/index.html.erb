@@ -22,23 +22,12 @@
     <%# i want the space that will be with 2/3 to cards and 1/3 to the map %>
     <div class="col-8"> <%# grid of cards %>
       <div class="container d-flex align-items-center justify-content-center">
-
         <% @dishes.each do |dish|%>
-        <%#= render 'card_dish', banana: dish %>
-          <div class="card-dish">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-            <div class="card-dish-infos">
-              <div>
-                <h2><%= dish.name %></h2>
-                <p><%= dish.description %></p>
-              </div>
-              <h2 class="card-dish-pricing"> <%= dish.price %> </h2>
-              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-dish-user avatar-bordered" />
-            </div>
-          </div>
+          <%# render of the cards banana is the variable that is being passed into the _card_dish %>
+          <%# as the same value that dish. normaly we give the same name like dish: dish %>
+          <%= render 'card_dish', banana: dish %>
         <% end %>
       </div>
-
     </div>
     <div class="col-4"> <%# map %>
       <%= render 'map'%>
